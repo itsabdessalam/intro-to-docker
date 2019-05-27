@@ -9,11 +9,12 @@ RUN \
     chown -R www-data:www-data /var/lib/nginx
 
 # Override nginx's default config
-RUN rm -rf /etc/nginx/sites-enabled/default
-RUN rm -rf /etc/nginx/conf.d/default.conf
-RUN rm -rf /etc/nginx/conf.d/examplessl.conf
-COPY ./default.conf /etc/nginx/conf.d/default.conf
+RUN \
+    rm -rf /etc/nginx/sites-enabled/default && \
+    rm -rf /etc/nginx/conf.d/default.conf && \
+    rm -rf /etc/nginx/conf.d/examplessl.conf
 
+COPY ./default.conf /etc/nginx/conf.d/default.conf
 
 # Override default nginx content
 COPY content /usr/share/nginx/html
