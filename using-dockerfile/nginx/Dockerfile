@@ -20,7 +20,7 @@ COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY content /usr/share/nginx/html
 
 # Add volumes
-VOLUME [ "/usr/share/nginx/html", "/etc/nginx"]
+VOLUME ["/usr/share/nginx/html", "/etc/nginx"]
 
 CMD ["nginx"]
 
