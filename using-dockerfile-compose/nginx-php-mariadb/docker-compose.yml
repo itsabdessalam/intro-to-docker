@@ -34,7 +34,6 @@ services:
     volumes:
       - ./mysql:/var/lib/mysql
       - ./scripts:/docker-entrypoint-initdb.d
-    restart: always
     networks:
       - custom-network
 
