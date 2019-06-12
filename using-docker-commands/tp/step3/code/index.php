@@ -27,15 +27,17 @@ $stmt = $pdo->prepare('SELECT * FROM counters WHERE id = :id;');
 $stmt->execute([
     ':id' => 1
 ]);
-$my_value = $stmt->fetch();
+$counter = $stmt->fetch();
 
-$value = $my_value["value"] + 1;
+$counter = $counter["value"] + 1;
 
 $stmt = $pdo->prepare('UPDATE counters SET value = :value WHERE id = :id;');
 $stmt->execute([
-    ':value' => $value,
+    ':value' => $counter,
     ':id' => 1
 ]);
 ?>
 
-Value <?= $value; ?>
+🚀 Hello there !
+<br>
+Counter <?= $counter; ?>
